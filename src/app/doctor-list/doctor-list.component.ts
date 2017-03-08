@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Doctor } from "./model/doctor.model";
-import { DoctorService } from "./doctor-service";
+import { DoctorService } from "../doctor.service";
+import { Doctor } from "../model/doctor.model";
 
 @Component({
   selector: "all-list",
