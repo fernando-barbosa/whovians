@@ -6,8 +6,7 @@ import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
 
 const routes: Routes = [
   { path: '', component: DoctorListComponent },
-  { path: 'details/:id', component: DoctorDetailComponent },
-  { path: '', redirectTo: '/' }
+  { path: 'details/:id', component: DoctorDetailComponent }
 ];
 
 @NgModule({

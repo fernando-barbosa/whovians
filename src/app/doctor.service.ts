@@ -21,7 +21,7 @@ export class DoctorService {
       let data = res.json();
       let alldoctor = [];
 
-      data.doctor_entries.forEach((entry) => {
+      data.pokemon_entries.forEach((entry) => {
         let doctor = new Doctor();
         doctor.name = entry.pokemon_species.name;
         doctor.id = entry.entry_number;
@@ -37,7 +37,7 @@ export class DoctorService {
       let headers = new Headers();
       headers.append("Content-Type", "application/json");
 
-      return this.http.get("http://pokeapi.co/api/v2/doctor/" + id + "/", {
+      return this.http.get("http://pokeapi.co/api/v2/pokemon/" + id + "/", {
           headers: headers
       })
       .toPromise()
