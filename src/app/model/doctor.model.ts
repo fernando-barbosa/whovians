@@ -9,6 +9,6 @@ export class Doctor {
     }
 
     image() {
-        return "https://rawgit.com/PokeAPI/sprites/master/sprites/pokemon/" + this.id + ".png";
+        return "https://raw.githubusercontent.com/fernando-barbosa/whovians/master/src/assets/images/" + this.id + ".png";
     }
 }
