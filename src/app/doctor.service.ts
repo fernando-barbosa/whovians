@@ -9,11 +9,10 @@ export class DoctorService {
 
   constructor(private http: Http) { }
 
-  list() {
+  get() {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
 
-    // http://pokeapi.co/api/v2/pokedex/2/
     return this.http.get("https://private-ebb9c-whovians.apiary-mock.com/list", {
       headers: headers
     })
@@ -26,6 +25,13 @@ export class DoctorService {
         let doctor = new Doctor();
         doctor.name = entry.doctor_info.name;
         doctor.id = entry.entry_number;
+        doctor.actor = entry.doctor_info.actor;
+        doctor.appearance = entry.doctor_info.first_appearance;
+
+        doctor.companions.forEach((eachCompanion) => {
+            doctor.companions.push(eachCompanion);
+        });
+
         alldoctor.push(doctor);
       });
 
@@ -34,29 +40,24 @@ export class DoctorService {
     .catch(this.handleError);
   }
 
-  get(id: number) {
+  list(id: number) {
       let headers = new Headers();
       headers.append("Content-Type", "application/json");
 
-      return this.http.get("http://pokeapi.co/api/v2/pokemon/" + id + "/", {
+      return this.http.get("https://private-ebb9c-whovians.apiary-mock.com/list", {
           headers: headers
       })
       .toPromise()
       .then((res: Response) => {
         let data = res.json();
         let doctor = new Doctor();
-        doctor.name = data.name;
-        doctor.id = data.id;
+        doctor.name = data.doctor_info.name;
+        doctor.id = data.entry_number;
+        doctor.actor = data.doctor_info.actor;
+        doctor.appearance = data.doctor_info.first_appearance;
 
-        data.types.forEach((eachType) => {
-            doctor.types.push(eachType.type.name);
-        });
-
-        data.stats.forEach((eachStat) => {
-            doctor.stats.push({
-                name: eachStat.stat.name,
-                value: eachStat.base_stat
-            });
+        doctor.companions.forEach((eachCompanion) => {
+            doctor.companions.push(eachCompanion);
         });
 
         return doctor;

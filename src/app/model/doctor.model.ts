@@ -1,9 +1,12 @@
 export class Doctor {
     name: string;
     id: number;
+    actor: string;
+    appearance: string;
+    companions = [];
     types = [];
     stats = [];
-
+    
     formattedName() {
         return this.name ? this.name[0].toUpperCase() + this.name.substr(1) : "";
     }

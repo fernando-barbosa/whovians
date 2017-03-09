@@ -1,4 +1,4 @@
-<h1>{{ doctor.formattedName() || 'Loading...' }}</h1>
+<h1>{{ doctor || 'Loading...' }}</h1>
 
 <div *ngIf="doctor.name" class="details-container">
   <img src="{{ doctor.image() }}">
