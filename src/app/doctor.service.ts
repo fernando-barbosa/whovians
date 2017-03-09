@@ -13,7 +13,8 @@ export class DoctorService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
 
-    return this.http.get("http://pokeapi.co/api/v2/pokedex/2/", {
+    // http://pokeapi.co/api/v2/pokedex/2/
+    return this.http.get("https://private-ebb9c-whovians.apiary-mock.com/list", {
       headers: headers
     })
     .toPromise()
@@ -21,9 +22,9 @@ export class DoctorService {
       let data = res.json();
       let alldoctor = [];
 
-      data.pokemon_entries.forEach((entry) => {
+      data.doctor_entries.forEach((entry) => {
         let doctor = new Doctor();
-        doctor.name = entry.pokemon_species.name;
+        doctor.name = entry.doctor_info.name;
         doctor.id = entry.entry_number;
         alldoctor.push(doctor);
       });
