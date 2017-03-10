@@ -51,7 +51,6 @@ export class DoctorService {
         doctor.appearance = data.doctor_info.first_appearance;
         
         data.doctor_info.companions.forEach((eachCompanion) => {
-            console.log(eachCompanion);
             doctor.companions.push({
               name: eachCompanion.name
             });

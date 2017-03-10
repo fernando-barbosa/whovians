@@ -1,7 +1,7 @@
 <h1 *ngIf="!doctor">Loading...</h1>
 
-<ul class="list-view">
-  <li *ngFor="let item of doctor">
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of doctor">
     <a [routerLink]="['/details', item.id]">
       <img src="{{ item.image() }}">
       <span>{{ item.formattedName() }}</span>

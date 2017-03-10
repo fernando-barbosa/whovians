@@ -10,12 +10,14 @@ import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
 
 import { DoctorService } from './doctor.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoctorListComponent,
-    DoctorDetailComponent
+    DoctorDetailComponent,
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,
