@@ -3927,14 +3927,6 @@ tbody.collapse.show {
   padding: 0.5rem 1rem;
 }
 
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-}
-
 .navbar-brand {
   display: inline-block;
   padding-top: .25rem;
@@ -9328,6 +9320,8 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/* Customize */
 
 .app-content {
   padding-top: 60px;
