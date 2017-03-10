@@ -16,7 +16,7 @@ export class DoctorDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.params["id"];
 
-    this.doctorService.list(id)
+    this.doctorService.get(id)
       .then((doctor) => { this.doctor = doctor; });
   }
 }

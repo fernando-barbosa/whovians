@@ -8,7 +8,7 @@ export class Doctor {
     stats = [];
     
     formattedName() {
-        return this.name ? this.name[0].toUpperCase() + this.name.substr(1) : "";
+        return this.name;
     }
 
     image() {

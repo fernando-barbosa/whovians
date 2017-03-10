@@ -1,19 +1,19 @@
-<h1>{{ doctor || 'Loading...' }}</h1>
+<h1 *ngIf="!doctor">Loading...</h1>
+
+<h1>{{ doctor.name || 'Loading...' }}</h1>
 
 <div *ngIf="doctor.name" class="details-container">
   <img src="{{ doctor.image() }}">
 
-  <h4>Types:</h4>
+  <h4>Actor:</h4>
+  {{ doctor.actor }}
+
+  <h4>First Appearance:</h4>
+  {{ doctor.appearance }}
+
+  <h4>Companions:</h4>
   <ul>
-    <li *ngFor="let type of doctor.types">
+    <li *ngFor="let type of doctor.companions">
       {{ type }}
     </li>
   </ul>
-
-  <h4>Stats:</h4>
-  <ul>
-    <li *ngFor="let stat of doctor.stats">
-      {{ stat.name }}: {{ stat.value }}
-    </li>
-  </ul>
-</div>
