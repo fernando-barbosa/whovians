@@ -49,9 +49,12 @@ export class DoctorService {
         doctor.id = data.entry_number;
         doctor.actor = data.doctor_info.actor;
         doctor.appearance = data.doctor_info.first_appearance;
-
-        doctor.companions.forEach((eachCompanion) => {
-            doctor.companions.push(eachCompanion);
+        
+        data.doctor_info.companions.forEach((eachCompanion) => {
+            console.log(eachCompanion);
+            doctor.companions.push({
+              name: eachCompanion.name
+            });
         });
 
         return doctor;
